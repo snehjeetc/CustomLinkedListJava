@@ -54,4 +54,56 @@ public class CustomLinkedList {
         }
         this.size++;
     }
+
+    public int getIndex(INode node) {
+        if(this.head == null) {
+            return -1;
+        }
+        int index = 0;
+        INode temp = this.head;
+        while(temp != null) {
+            if(temp.equals(node))
+                return index;
+            index++;
+            temp = temp.getNext();
+        }
+        return -1;
+    }
+
+    public void insert(INode newNode, int atIndex) throws CustomLinkedListExceptions {
+        if(this.head == null && atIndex!=0) {
+            throw new CustomLinkedListExceptions(CustomLinkedListExceptions.LinkedListExceptionType.INDEX_OUT_OF_BOUND, "Invalid index for insertion");
+        }
+        if(atIndex == 0) {
+            if(this.head == null)
+                this.tail = this.head = newNode;
+            else {
+                newNode.setNext(this.head);
+                this.head = newNode;
+            }
+            this.size++;
+            return;
+        }
+        int count = 0;
+        INode temp = this.head;
+        while(temp.getNext()!=null && count < atIndex-1) {
+            temp = temp.getNext();
+            count++;
+        }
+        if(temp.getNext() != null) {
+            newNode.setNext(temp.getNext());
+            temp.setNext(newNode);
+            this.size++;
+            return;
+        }
+        else if(temp.getNext() == null && count == atIndex-1) {
+            this.tail.setNext(newNode);
+            this.tail = this.tail.getNext();
+            this.size++;
+            return;
+        }
+        else {
+           throw new CustomLinkedListExceptions(CustomLinkedListExceptions.LinkedListExceptionType.INDEX_OUT_OF_BOUND, "Invalid index for insertion");
+        }
+    }
 }
