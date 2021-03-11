@@ -1,6 +1,6 @@
 package com.customdatastructure.java;
 
-public class CustomLinkedListExceptions extends Exception {
+public class CustomLinkedListExceptions extends RuntimeException {
     enum LinkedListExceptionType{
         LIST_EMPTY,
         INDEX_OUT_OF_BOUND;

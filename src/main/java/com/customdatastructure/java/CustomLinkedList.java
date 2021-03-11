@@ -106,4 +106,17 @@ public class CustomLinkedList {
            throw new CustomLinkedListExceptions(CustomLinkedListExceptions.LinkedListExceptionType.INDEX_OUT_OF_BOUND, "Invalid index for insertion");
         }
     }
+
+    public void pop() {
+        if(this.head != null) {
+            if(this.head == this.tail)
+                this.tail = this.head = null;
+            else {
+                INode temp = this.head;
+                this.head = this.head.getNext();
+                temp.setNext(null);
+            }
+            this.size--;
+        }
+    }
 }
