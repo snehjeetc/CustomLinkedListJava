@@ -42,4 +42,16 @@ public class CustomLinkedList {
     public INode getTail(){
         return tail;
     }
+
+    public void append(INode newNode) {
+        if(this.head == null) {
+            this.tail = this.head = newNode;
+            return;
+        }
+        else {
+            this.tail.setNext(newNode);
+            this.tail = this.tail.getNext();
+        }
+        this.size++;
+    }
 }
