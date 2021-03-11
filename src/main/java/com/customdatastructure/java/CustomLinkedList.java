@@ -119,4 +119,20 @@ public class CustomLinkedList {
             this.size--;
         }
     }
+
+    public void popLast() {
+        if (this.head == null)
+            return;
+        if (this.head.getNext() == null) {
+            this.head = this.tail = null;
+            this.size--;
+            return;
+        }
+        INode prevTail = this.head;
+        while (prevTail.getNext() != this.tail)
+            prevTail = prevTail.getNext();
+        prevTail.setNext(null);
+        this.tail = prevTail;
+        this.size--;
+    }
 }
