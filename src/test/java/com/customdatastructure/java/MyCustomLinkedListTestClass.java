@@ -80,4 +80,18 @@ public class MyCustomLinkedListTestClass {
         boolean result = (myLinkedList.getIndex(myThirdNode) == -1) ? true : false;
         Assert.assertTrue(result);
     }
+
+    @Test
+    public void givenNumbers_inALinkedList_SearchTheValueInTheLinkedList(){
+        Node<Integer> myFirstNode = new Node<>(56);
+        Node<Integer> mySecondNode = new Node<>(30);
+        Node<Integer> myThirdNode = new Node<>(70);
+        CustomLinkedList myLinkedList = new CustomLinkedList();
+        myLinkedList.append(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myThirdNode);
+        System.out.println(myLinkedList);
+        boolean result = (myLinkedList.getIndex(Integer.valueOf(30))!= -1) ? true : false;
+        Assert.assertTrue(result);
+    }
 }

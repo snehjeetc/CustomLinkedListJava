@@ -70,6 +70,21 @@ public class CustomLinkedList {
         return -1;
     }
 
+    public <T> int getIndex(T key) {
+        if(this.head == null) {
+            return -1;
+        }
+        int index = 0;
+        INode temp = this.head;
+        while(temp != null) {
+            if(temp.getKey().equals(key))
+                return index;
+            index++;
+            temp = temp.getNext();
+        }
+        return -1;
+    }
+
     public void insert(INode newNode, int atIndex) throws CustomLinkedListExceptions {
         if(this.head == null && atIndex!=0) {
             throw new CustomLinkedListExceptions(CustomLinkedListExceptions.LinkedListExceptionType.INDEX_OUT_OF_BOUND, "Invalid index for insertion");
