@@ -3,7 +3,7 @@ package com.customdatastructure.java;
 import java.util.Comparator;
 
 public class OrderedCustomLinkedList<T> extends CustomLinkedList<T>{
-    Comparator<? super T> c;
+    private Comparator<? super T> c;
     @SuppressWarnings("unchecked")
     public OrderedCustomLinkedList(Comparator<? super T> c, T ...vars) {
         super();
@@ -21,7 +21,7 @@ public class OrderedCustomLinkedList<T> extends CustomLinkedList<T>{
         }
     }
 
-    public static <T> int nextIndex(Node<T> head, T value, Comparator< ? super T> c) {
+    private static <T> int nextIndex(Node<T> head, T value, Comparator< ? super T> c) {
         int index = 0;
         while(head.getNext() != null && c.compare(head.getValue(), value) < 0 ) {
             head = head.getNext();
