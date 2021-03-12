@@ -46,7 +46,6 @@ public class CustomLinkedList {
     public void append(INode newNode) {
         if(this.head == null) {
             this.tail = this.head = newNode;
-            return;
         }
         else {
             this.tail.setNext(newNode);
@@ -141,5 +140,42 @@ public class CustomLinkedList {
         prevTail.setNext(null);
         this.tail = prevTail;
         this.size--;
+    }
+
+    public <T> boolean search(T value) {
+        return getIndex(value) != -1;
+    }
+
+    public int length(){
+        return this.size;
+    }
+
+    public void remove(int atIndex) {
+        if(this.head == null) {
+            return;
+        }
+        if(atIndex == 0) {
+            this.pop();
+            return;
+        }
+        INode temp = this.head;
+        INode prevTail = null;
+        int count = 0;
+        while(temp != null && count < atIndex) {
+            prevTail = temp;
+            temp = temp.getNext();
+            count++;
+        }
+        if(temp != null) {
+            prevTail.setNext(temp.getNext());
+            if(temp == this.tail)
+                this.tail = prevTail;
+            temp.setNext(null);
+            this.size--;
+            return;
+        }
+        else {
+            throw new CustomLinkedListExceptions(CustomLinkedListExceptions.LinkedListExceptionType.INDEX_OUT_OF_BOUND, "Invalid index for removal");
+        }
     }
 }
