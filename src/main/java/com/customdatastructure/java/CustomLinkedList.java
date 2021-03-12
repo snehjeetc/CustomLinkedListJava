@@ -90,13 +90,7 @@ public class CustomLinkedList {
             throw new CustomLinkedListExceptions(CustomLinkedListExceptions.LinkedListExceptionType.INDEX_OUT_OF_BOUND, "Invalid index for insertion");
         }
         if(atIndex == 0) {
-            if(this.head == null)
-                this.tail = this.head = newNode;
-            else {
-                newNode.setNext(this.head);
-                this.head = newNode;
-            }
-            this.size++;
+            add(newNode);
             return;
         }
         int count = 0;
@@ -112,9 +106,7 @@ public class CustomLinkedList {
             return;
         }
         else if(temp.getNext() == null && count == atIndex-1) {
-            this.tail.setNext(newNode);
-            this.tail = this.tail.getNext();
-            this.size++;
+            append(newNode);
             return;
         }
         else {

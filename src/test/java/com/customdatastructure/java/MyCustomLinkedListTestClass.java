@@ -94,4 +94,21 @@ public class MyCustomLinkedListTestClass {
         boolean result = (myLinkedList.getIndex(Integer.valueOf(30))!= -1) ? true : false;
         Assert.assertTrue(result);
     }
+
+    @Test
+    public void givenNumberInTheLinkedList_InsetionAtTheMiddlePosition(){
+        int thirdPosition = 2;
+        Node<Integer> myFirstNode = new Node<>(56);
+        Node<Integer> mySecondNode = new Node<>(30);
+        Node<Integer> myThirdNode = new Node<>(40);
+        Node<Integer> myFourthNode = new Node<>(70);
+        CustomLinkedList myLinkedList = new CustomLinkedList();
+        myLinkedList.append(myFirstNode);
+        myLinkedList.append(mySecondNode);
+        myLinkedList.append(myFourthNode);
+        myLinkedList.insert(myThirdNode, thirdPosition);
+        System.out.println(myLinkedList);
+        boolean result = (myLinkedList.getIndex(myThirdNode) == thirdPosition) ? true : false;
+        Assert.assertTrue(result);
+    }
 }
