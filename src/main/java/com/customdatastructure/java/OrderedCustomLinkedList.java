@@ -7,10 +7,10 @@ public class OrderedCustomLinkedList<T> extends CustomLinkedList<T>{
     @SuppressWarnings("unchecked")
     public OrderedCustomLinkedList(Comparator<? super T> c, T ...vars) {
         super();
+        this.c = c;
         if(vars == null || vars.length == 0 || vars[0] == null)
             return;
 
-        this.c = c;
         super.add(vars[0]);
 
         int count = 1;
@@ -22,8 +22,10 @@ public class OrderedCustomLinkedList<T> extends CustomLinkedList<T>{
     }
 
     private static <T> int nextIndex(Node<T> head, T value, Comparator< ? super T> c) {
+        if(head == null)
+            return 0;
         int index = 0;
-        while(head.getNext() != null && c.compare(head.getValue(), value) < 0 ) {
+        while(head != null && c.compare(head.getValue(), value) < 0 ) {
             head = head.getNext();
             index++;
         }

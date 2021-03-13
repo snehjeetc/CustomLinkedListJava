@@ -31,4 +31,17 @@ public class OrderedCustomLinkedListTestClass {
         Integer expectedIndexAfterInsertion = 3;
         Assert.assertEquals(expectedIndexAfterInsertion, (Integer)myIntegerList.getIndex(toBeInserted));
     }
+
+    @Test
+    public void givenEmptyOrderedLinkedList_Add4Numbers_ShouldReturnProperOrderedLinkedList(){
+        OrderedCustomLinkedList<Integer> myIntegerList = new OrderedCustomLinkedList<>(Integer::compare);
+        myIntegerList.insert(Integer.valueOf(7));
+        for(int i=4; i>0; i--)
+            myIntegerList.insert(Integer.valueOf(i));
+        String expectedCustomLinkedList = "[1, 2, 3, 4, 7]";
+        String constructedList = myIntegerList.toString();
+        System.out.println(myIntegerList);
+        Assert.assertEquals(expectedCustomLinkedList, constructedList);
+
+    }
 }
