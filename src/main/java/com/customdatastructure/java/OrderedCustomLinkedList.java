@@ -38,6 +38,16 @@ public class OrderedCustomLinkedList<T> extends CustomLinkedList<T>{
     }
 
     @Override
+    public void add(T value){
+        insert(value);
+    }
+
+    @Override
+    public void append(T value){
+        insert(value);
+    }
+
+    @Override
     public void insert(int atIndex, T value) {
         throw new CustomLinkedListExceptions
                 (CustomLinkedListExceptions.LinkedListExceptionType.UNSUPPORTED_OPERATION,
