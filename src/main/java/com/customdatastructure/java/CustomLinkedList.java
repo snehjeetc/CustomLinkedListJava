@@ -25,7 +25,7 @@ public class CustomLinkedList<T> {
         }
     }
 
-    public void add(T value) {
+    public final void add(T value) {
         Node<T> newNode = new Node<T>(value);
         if(this.head == null)
             this.tail = this.head = newNode;
@@ -36,7 +36,7 @@ public class CustomLinkedList<T> {
         this.size++;
     }
 
-    public void append(T value) {
+    public final void append(T value) {
         Node<T> newNode = new Node<T>(value);
         if(this.head == null) {
             this.head = newNode;
@@ -65,7 +65,7 @@ public class CustomLinkedList<T> {
         return -1;
     }
 
-    public void insert(int atIndex, T value) {
+    public final void insert(int atIndex, T value) {
         if(this.head == null && atIndex!=0) {
            throw new CustomLinkedListExceptions(CustomLinkedListExceptions.LinkedListExceptionType.INDEX_OUT_OF_BOUND,
                    "Invalid index for insertion");

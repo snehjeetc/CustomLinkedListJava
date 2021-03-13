@@ -3,8 +3,7 @@ package com.customdatastructure.java;
 public class CustomLinkedListExceptions extends RuntimeException {
     enum LinkedListExceptionType{
         LIST_EMPTY,
-        INDEX_OUT_OF_BOUND,
-        UNSUPPORTED_OPERATION;
+        INDEX_OUT_OF_BOUND;
     }
     LinkedListExceptionType type;
     public CustomLinkedListExceptions(LinkedListExceptionType type, String message){
