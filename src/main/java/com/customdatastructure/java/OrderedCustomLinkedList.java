@@ -36,4 +36,21 @@ public class OrderedCustomLinkedList<T> extends CustomLinkedList<T>{
         int index = nextIndex(super.getHead(), value, c);
         super.insert(index, value);
     }
+
+    @Override
+    public void add(T value){
+        insert(value);
+    }
+
+    @Override
+    public void append(T value){
+        insert(value);
+    }
+
+    @Override
+    public void insert(int atIndex, T value) {
+        throw new CustomLinkedListExceptions
+                (CustomLinkedListExceptions.LinkedListExceptionType.UNSUPPORTED_OPERATION,
+                        "Ordered linked list doesn't support insertion with index");
+    }
 }
