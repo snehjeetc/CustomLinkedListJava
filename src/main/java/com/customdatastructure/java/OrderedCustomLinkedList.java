@@ -21,11 +21,11 @@ public class OrderedCustomLinkedList<T> extends CustomLinkedList<T>{
         }
     }
 
-    private static <T> int nextIndex(Node<T> head, T value, Comparator< ? super T> c) {
+    private static <T> int nextIndex(INode<T> head, T value, Comparator< ? super T> c) {
         if(head == null)
             return 0;
         int index = 0;
-        while(head != null && c.compare(head.getValue(), value) < 0 ) {
+        while(head != null && c.compare(head.getKey(), value) < 0 ) {
             head = head.getNext();
             index++;
         }
@@ -38,14 +38,10 @@ public class OrderedCustomLinkedList<T> extends CustomLinkedList<T>{
     }
 
     @Override
-    public void add(T value){
-        insert(value);
-    }
+    public void add(T value){ insert(value); }
 
     @Override
-    public void append(T value){
-        insert(value);
-    }
+    public void append(T value){ insert(value); }
 
     @Override
     public void insert(int atIndex, T value) {

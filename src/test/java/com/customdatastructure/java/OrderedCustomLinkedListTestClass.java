@@ -42,6 +42,5 @@ public class OrderedCustomLinkedListTestClass {
         String constructedList = myIntegerList.toString();
         System.out.println(myIntegerList);
         Assert.assertEquals(expectedCustomLinkedList, constructedList);
-
     }
 }

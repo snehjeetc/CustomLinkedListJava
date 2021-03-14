@@ -11,12 +11,12 @@ public class MyCustomLinkedListTestClass {
         Node<Integer> mySecondNode = new Node<>(30);
         Node<Integer> myThirdNode = new Node<>(56);
         CustomLinkedList<Integer> myLinkedList = new CustomLinkedList<>();
-        myLinkedList.add(myFirstNode.getValue());
-        myLinkedList.add(mySecondNode.getValue());
-        myLinkedList.add(myThirdNode.getValue());
+        myLinkedList.add(myFirstNode.getKey());
+        myLinkedList.add(mySecondNode.getKey());
+        myLinkedList.add(myThirdNode.getKey());
         System.out.println(myLinkedList);
-        boolean result = myLinkedList.getHead().getNext().getValue().equals(mySecondNode.getValue()) &&
-                myLinkedList.getHead().getNext().getNext().getValue().equals(myFirstNode.getValue());
+        boolean result = myLinkedList.getHead().getNext().getKey().equals(mySecondNode.getKey()) &&
+                myLinkedList.getHead().getNext().getNext().getKey().equals(myFirstNode.getKey());
         Assert.assertTrue(result);
     }
 
@@ -26,12 +26,12 @@ public class MyCustomLinkedListTestClass {
         Node<Integer> mySecondNode = new Node<>(30);
         Node<Integer> myThirdNode = new Node<>(70);
         CustomLinkedList<Integer> myLinkedList = new CustomLinkedList<>();
-        myLinkedList.append(myFirstNode.getValue());
-        myLinkedList.append(mySecondNode.getValue());
-        myLinkedList.append(myThirdNode.getValue());
+        myLinkedList.append(myFirstNode.getKey());
+        myLinkedList.append(mySecondNode.getKey());
+        myLinkedList.append(myThirdNode.getKey());
         System.out.println(myLinkedList);
-        boolean result = myLinkedList.getHead().getNext().getValue().equals(mySecondNode.getValue()) &&
-                myLinkedList.getHead().getNext().getNext().getValue().equals(myThirdNode.getValue());
+        boolean result = myLinkedList.getHead().getNext().getKey().equals(mySecondNode.getKey()) &&
+                myLinkedList.getHead().getNext().getNext().getKey().equals(myThirdNode.getKey());
         Assert.assertTrue(result);
     }
 
@@ -42,12 +42,12 @@ public class MyCustomLinkedListTestClass {
         Node<Integer> mySecondNode = new Node<>(30);
         Node<Integer> myThirdNode = new Node<>(70);
         CustomLinkedList<Integer> myLinkedList = new CustomLinkedList<>();
-        myLinkedList.append(myFirstNode.getValue());
-        myLinkedList.append(myThirdNode.getValue());
-        myLinkedList.insert(secondPosition, mySecondNode.getValue());
+        myLinkedList.append(myFirstNode.getKey());
+        myLinkedList.append(myThirdNode.getKey());
+        myLinkedList.insert(secondPosition, mySecondNode.getKey());
         System.out.println(myLinkedList);
-        boolean result = myLinkedList.getHead().getNext().getValue().equals(mySecondNode.getValue()) &&
-                myLinkedList.getHead().getNext().getNext().getValue().equals(myThirdNode.getValue());
+        boolean result = myLinkedList.getHead().getNext().getKey().equals(mySecondNode.getKey()) &&
+                myLinkedList.getHead().getNext().getNext().getKey().equals(myThirdNode.getKey());
         Assert.assertTrue(result);
     }
 
@@ -57,12 +57,12 @@ public class MyCustomLinkedListTestClass {
         Node<Integer> mySecondNode = new Node<>(30);
         Node<Integer> myThirdNode = new Node<>(70);
         CustomLinkedList<Integer> myLinkedList = new CustomLinkedList<>();
-        myLinkedList.append(myFirstNode.getValue());
-        myLinkedList.append(mySecondNode.getValue());
-        myLinkedList.append(myThirdNode.getValue());
+        myLinkedList.append(myFirstNode.getKey());
+        myLinkedList.append(mySecondNode.getKey());
+        myLinkedList.append(myThirdNode.getKey());
         myLinkedList.pop();
         System.out.println(myLinkedList);
-        boolean result = (myLinkedList.getIndex(myFirstNode.getValue()) == -1) ? true : false;
+        boolean result = (myLinkedList.getIndex(myFirstNode.getKey()) == -1) ? true : false;
         Assert.assertTrue(result);
     }
 
@@ -72,12 +72,12 @@ public class MyCustomLinkedListTestClass {
         Node<Integer> mySecondNode = new Node<>(30);
         Node<Integer> myThirdNode = new Node<>(70);
         CustomLinkedList<Integer> myLinkedList = new CustomLinkedList();
-        myLinkedList.append(myFirstNode.getValue());
-        myLinkedList.append(mySecondNode.getValue());
-        myLinkedList.append(myThirdNode.getValue());
+        myLinkedList.append(myFirstNode.getKey());
+        myLinkedList.append(mySecondNode.getKey());
+        myLinkedList.append(myThirdNode.getKey());
         myLinkedList.popLast();
         System.out.println(myLinkedList);
-        boolean result = (myLinkedList.getIndex(myThirdNode.getValue()) == -1) ? true : false;
+        boolean result = (myLinkedList.getIndex(myThirdNode.getKey()) == -1) ? true : false;
         Assert.assertTrue(result);
     }
 
@@ -87,9 +87,9 @@ public class MyCustomLinkedListTestClass {
         Node<Integer> mySecondNode = new Node<>(30);
         Node<Integer> myThirdNode = new Node<>(70);
         CustomLinkedList<Integer> myLinkedList = new CustomLinkedList();
-        myLinkedList.append(myFirstNode.getValue());
-        myLinkedList.append(mySecondNode.getValue());
-        myLinkedList.append(myThirdNode.getValue());
+        myLinkedList.append(myFirstNode.getKey());
+        myLinkedList.append(mySecondNode.getKey());
+        myLinkedList.append(myThirdNode.getKey());
         System.out.println(myLinkedList);
         boolean result = myLinkedList.search(Integer.valueOf(30));
         Assert.assertTrue(result);
@@ -103,12 +103,12 @@ public class MyCustomLinkedListTestClass {
         Node<Integer> myThirdNode = new Node<>(40);
         Node<Integer> myFourthNode = new Node<>(70);
         CustomLinkedList<Integer> myLinkedList = new CustomLinkedList<>();
-        myLinkedList.append(myFirstNode.getValue());
-        myLinkedList.append(mySecondNode.getValue());
-        myLinkedList.append(myFourthNode.getValue());
-        myLinkedList.insert( thirdPosition, myThirdNode.getValue());
+        myLinkedList.append(myFirstNode.getKey());
+        myLinkedList.append(mySecondNode.getKey());
+        myLinkedList.append(myFourthNode.getKey());
+        myLinkedList.insert( thirdPosition, myThirdNode.getKey());
         System.out.println(myLinkedList);
-        boolean result = (myLinkedList.getIndex(myThirdNode.getValue()) == thirdPosition) ? true : false;
+        boolean result = (myLinkedList.getIndex(myThirdNode.getKey()) == thirdPosition) ? true : false;
         Assert.assertTrue(result);
     }
 
@@ -120,14 +120,14 @@ public class MyCustomLinkedListTestClass {
         Node<Integer> myThirdNode = new Node<>(40);
         Node<Integer> myFourthNode = new Node<>(70);
         CustomLinkedList<Integer> myLinkedList = new CustomLinkedList<>();
-        myLinkedList.append(myFirstNode.getValue());
-        myLinkedList.append(mySecondNode.getValue());
-        myLinkedList.append(myFourthNode.getValue());
-        myLinkedList.insert(thirdPosition, myThirdNode.getValue());
+        myLinkedList.append(myFirstNode.getKey());
+        myLinkedList.append(mySecondNode.getKey());
+        myLinkedList.append(myFourthNode.getKey());
+        myLinkedList.insert(thirdPosition, myThirdNode.getKey());
         System.out.println(myLinkedList + " Size: " + myLinkedList.size());
         myLinkedList.remove(thirdPosition);
         System.out.println(myLinkedList + " Size: " + myLinkedList.size());
-        boolean result = (myLinkedList.getIndex(myThirdNode.getValue()) == thirdPosition) ? true : false;
+        boolean result = (myLinkedList.getIndex(myThirdNode.getKey()) == thirdPosition) ? true : false;
         Assert.assertFalse(result);
     }
 

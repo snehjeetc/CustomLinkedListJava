@@ -4,10 +4,10 @@ package com.customdatastructure.java;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class LinkedListCreationValidationClass {
+public class NodeTestingClass {
 
     @Test
-    public void given3NumberWhenLinkedShouldPassedLinkedListTest(){
+    public void given3Number_WhenCretedNodes_ShouldPassedLinkedListTest(){
         Node<Integer> myFirstNode = new Node<>(56);
         Node<Integer> mySecondNode = new Node<>(30);
         Node<Integer> myThirdNode = new Node<>(70);
